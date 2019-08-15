@@ -1,37 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="572395dd-0953-40b1-94e5-3c9b3a6da5d5" name="Default Changelist" comment="" />
+    <list default="true" id="09e2111b-afd4-46db-8d65-8a22af313097" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/itil$views.coverage" NAME="views Coverage Results" MODIFIED="1565013502211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
-  </component>
-  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
-    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoserver/autoserver/settings.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/autoserver/api/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/py software 3/Lib/site-packages/pip/_internal/index.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12240">
+              <caret line="546" column="8" selection-start-line="546" selection-start-column="8" selection-end-line="546" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/py software 3/Lib/site-packages/django/contrib/sessions/backends/file.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2256">
+              <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/itil/urls.py" />
-        <option value="$PROJECT_DIR$/api/urls.py" />
-        <option value="$PROJECT_DIR$/itil/settings.py" />
-        <option value="$PROJECT_DIR$/api/views.py" />
-      </list>
-    </option>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="972" />
-    <option name="y" value="168" />
-    <option name="width" value="2762" />
-    <option name="height" value="1770" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="56" />
+    <option name="y" value="228" />
+    <option name="width" value="1102" />
+    <option name="height" value="635" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -42,18 +72,42 @@
         <subPane>
           <expand>
             <path>
-              <item name="itil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="itil" type="462c0819:PsiDirectoryNode" />
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="itil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="itil" type="462c0819:PsiDirectoryNode" />
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="autoclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="autoclient" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="autoserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="autoserver" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="itil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="itil" type="462c0819:PsiDirectoryNode" />
-              <item name="itil" type="462c0819:PsiDirectoryNode" />
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="autoserver" type="462c0819:PsiDirectoryNode" />
+              <item name="autoserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMDB" type="462c0819:PsiDirectoryNode" />
+              <item name="autoserver" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -67,12 +121,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\itil\api" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -86,148 +134,107 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.views">
-    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="itil" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/views.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="itil" type="Python.DjangoServer" factoryName="Django server">
-      <module name="itil" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="itil.settings" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.views" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="572395dd-0953-40b1-94e5-3c9b3a6da5d5" name="Default Changelist" comment="" />
-      <created>1565012165539</created>
+      <changelist id="09e2111b-afd4-46db-8d65-8a22af313097" name="Default" comment="" />
+      <created>1565332705564</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1565012165539</updated>
-      <workItem from="1565012171192" duration="1938000" />
-      <workItem from="1565054849778" duration="127000" />
+      <updated>1565332705564</updated>
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2065000" />
-  </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="34" width="1381" height="885" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120937265" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38709676" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.11043873" side_tool="true" weight="0.4829932" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.8895613" weight="0.60714287" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8895613" weight="0.17006803" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32993197" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.36386767" visible="true" weight="0.19591528" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.15885022" />
+      <window_info id="Structure" order="1" sideWeight="0.6361323" side_tool="true" weight="0.13388805" />
+      <window_info id="Favorites" order="2" sideWeight="0.6068966" side_tool="true" weight="0.23903178" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44047618" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.15646258" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/itil/settings.py">
+    <entry file="file://$PROJECT_DIR$/autoserver/autoserver/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/py software 3/Lib/site-packages/pip/_internal/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+        <state relative-caret-position="12240">
+          <caret line="546" column="8" selection-start-line="546" selection-start-column="8" selection-end-line="546" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/itil/urls.py">
+    <entry file="file://D:/py software 3/Lib/site-packages/django/contrib/sessions/backends/file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="e#638#670#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2256">
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/urls.py">
+    <entry file="file://$PROJECT_DIR$/autoserver/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#638#679#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/Python36/Lib/site-packages/paramiko/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="2040">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
-            <element signature="e#148#209#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/py software 3/Lib/site-packages/pip/_internal/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12240">
+          <caret line="546" column="8" selection-start-line="546" selection-start-column="8" selection-end-line="546" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/py software 3/Lib/site-packages/django/contrib/sessions/backends/file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2256">
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoserver/autoserver/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoserver/repository/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoserver/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
