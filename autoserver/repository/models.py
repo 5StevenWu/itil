@@ -61,7 +61,7 @@ class Server(models.Model):
     cpu_physical_count = models.IntegerField('CPU物理个数', null=True, blank=True)
     cpu_model = models.CharField('CPU型号', max_length=128, null=True, blank=True)
 
-    latest_date = models.DateField('最后更新时间', null=True, auto_now=True)
+    latest_date = models.DateField('最后更新时间', null=True,)
     create_at = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:
