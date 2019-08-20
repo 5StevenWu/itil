@@ -72,7 +72,7 @@ class AuthView(APIView):
 
 class Asset(AuthView):
     def get(self, request):
-        host_list = ['c1.com', 'c2.com'] * 100
+        host_list = ['10.2.41.161', '10.2.41.162'] * 2
         return Response(host_list)
 
     def post(self, request):
@@ -136,12 +136,14 @@ class Asset(AuthView):
         return Response(result)
 
 
+
+
+
+
+
 KEY = 'alkdjwqm,ensklhjkrhwfeqnsdah'
 import hashlib
 import time
-
-
-
 class Test(APIView):
 
     def post(self, request):

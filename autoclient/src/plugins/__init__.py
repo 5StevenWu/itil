@@ -8,8 +8,9 @@ def get_server_info(handler, hostname=None):
     :return:
     """
     info = {}
+    # 'disk'   disk src.plugins.disk.Disk  循环需要收集的硬件信息
     for name, plugin_str in settings.PLUGINS_DICT.items():
-        # 'disk'   disk src.plugins.disk.Disk
+
         cls = get_class(plugin_str)
         obj = cls()
         ret = obj.process(handler, hostname)

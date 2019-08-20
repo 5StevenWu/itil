@@ -2,9 +2,9 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-USER = 'XX'
+USER = 'root'
 PWD = 'XXXX'
-ENGINE = 'agent'
+ENGINE = 'ssh'
 
 ENGINE_DICT = {
     'agent': 'src.engine.agent.AgentHandler',
@@ -14,7 +14,7 @@ ENGINE_DICT = {
 }
 
 PLUGINS_DICT = {
-    'disk': 'src.plugins.disk.Disk',
+    # 'disk': 'src.plugins.disk.Disk',
     'memory': 'src.plugins.memory.Memory',
     'nic': 'src.plugins.nic.NIC',
     'basic': 'src.plugins.basic.Basic',
@@ -25,11 +25,11 @@ PLUGINS_DICT = {
 SSH_USER = 'root'
 SSH_PWD = '1'
 
-DEBUG = True
+DEBUG = False
 
 POST_ASSET_URL = 'http://127.0.0.1:8000/api/asset/'
 
-LOG_NAME = 'xasldkjsklj'
+LOG_NAME = 'itil.log'
 LOG_FILE_PATH = os.path.join(BASE_DIR, 'log', 'log.log')
 
 CERT_PATH = os.path.join(BASE_DIR,'conf','cert')

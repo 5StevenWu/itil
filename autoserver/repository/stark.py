@@ -63,19 +63,20 @@ site.register(models.IDC, IDCConfig)
 from stark.forms.forms import StarkModelForm
 from stark.forms.widgets import DatePickerInput
 
+
 class ServerForm(StarkModelForm):
     class Meta:
         model = models.Server
         fields = '__all__'
 
         widgets = {
-            'latest_date':DatePickerInput(attrs={'class':'date-picker','autocomplete':'off'})
+            'latest_date': DatePickerInput(attrs={'class': 'date-picker', 'autocomplete': 'off'})
         }
 
 
 class ServerConfig(StarkConfig):
-
     model_form_class = ServerForm
+
     #
     # def show_satus(self, header=None, row=None):
 
@@ -97,14 +98,14 @@ class ServerConfig(StarkConfig):
         return mark_safe(
             '<a href="{}"> 查看 </a>'.format('/stark/repository/server/server_record/{}'.format(row.pk), ))
 
-    # 展示的字段
+    # 展示的字段   可以使用内置或者自定义方法  内置get_choice_text 自定义show_hostname
     list_display = ['id', show_hostname, 'idc', 'cabinet_num', 'cabinet_order',
                     get_choice_text('device_status_id', '状态', ), show_record,
                     'latest_date']
     # 排序
     order_by = ['-id']
     # 搜索
-    search_list = ['name', 'floor']
+    search_list = ['id','hostname', ]
 
     def server_detail(self, request, pk):
         obj = models.Server.objects.filter(pk=pk).first()
@@ -126,7 +127,8 @@ class ServerConfig(StarkConfig):
 
     # 组合搜索  组合筛选
     list_filter = [
-        Option('idc', is_multi=True, condition={'pk__in': [1, ]}),
+        # Option('idc', is_multi=True, condition={'pk__in': [1, ]}),  # condition 只显示部分筛选条件
+        Option('idc', is_multi=True,   ),
         # Option('business_unit'),
         Option('device_status_id', is_choice=True, text_func=lambda x: x[1])
     ]
