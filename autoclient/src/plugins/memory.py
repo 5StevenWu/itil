@@ -17,7 +17,9 @@ class Memory(BasePlugin):
                     ret = f.read()
             else:
                 ret = handler.cmd('sudo dmidecode  -q -t 17 2>/dev/null', hostname)[:60]
+            # print(ret)
             response.data = self.parse(ret)
+            # print(response.data)
         except Exception:
             error = traceback.format_exc()
             response.status = False

@@ -10,6 +10,7 @@ class BaseHandler:
     def __init__(self):
         self.asset_url = settings.POST_ASSET_URL
 
+
     def handler(self):
         """
         收集硬件的信息 汇报给API
@@ -31,6 +32,7 @@ class SshAndSaltHandler(BaseHandler):
 
         host_lit = ret.json()
 
+
         pool = ThreadPoolExecutor(20)
 
         for hostname in host_lit:
@@ -38,10 +40,11 @@ class SshAndSaltHandler(BaseHandler):
 
     def task(self, hostname):
         info = get_server_info(self, hostname)
-
+        print('#####',info)
+        print(self.asset_url)
         ret = requests.post(
             url=self.asset_url,
             data=json.dumps(info).encode('utf-8'),
             headers={'content-type': 'application/json'}
         )
-        print(ret)
+        print(ret.json())

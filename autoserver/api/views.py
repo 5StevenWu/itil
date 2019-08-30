@@ -18,6 +18,7 @@ from rest_framework.response import Response
 from repository import models
 from .service import process_basic, process_disk, process_memory, process_nic
 
+
 def gen_key(ctime):
     key = "{}|{}".format(KEY, ctime)
 
@@ -29,22 +30,23 @@ def gen_key(ctime):
 
 key_record = {}
 
+
 class AuthView(APIView):
 
     def dispatch(self, request, *args, **kwargs):
 
         if request.method != 'POST':
+            print('AAA')
             return super().dispatch(request, *args, **kwargs)
 
-        ret = {'stauts': True, 'msg': 'ok'}
+        ret = {'status': True, 'msg': 'ok'}
 
         client_key = request.GET.get('key')
         now = time.time()
 
-        ctime = request.GET.get('ctime',now)
+        ctime = request.GET.get('ctime', now)
 
-        server_key = gen_key(ctime,)
-
+        server_key = gen_key(ctime, )
 
         if now - float(ctime) > 2:
             # 时间超时
@@ -58,9 +60,8 @@ class AuthView(APIView):
             ret['msg'] = '可以已经被使用了'
             return JsonResponse(ret)
 
-
         if client_key != server_key:
-            ret['stauts'] = False
+            ret['status'] = False
             ret['msg'] = '验证不通过'
             return JsonResponse(ret)
 
@@ -69,46 +70,18 @@ class AuthView(APIView):
             return super().dispatch(request, *args, **kwargs)
 
 
-
 class Asset(AuthView):
     def get(self, request):
         host_list = [
             '10.9.37.41',
-            '10.9.37.42',
-            '10.9.37.43',
-            '10.9.37.44',
-            '10.9.37.45',
-            '10.9.37.46',
-            '10.9.37.98',
-            '10.9.37.99',
-            '10.9.37.120',
-            '10.9.37.121',
-            '10.9.37.122',
-            '10.9.37.123',
-            '10.9.37.124',
-            '10.9.37.125',
-            '10.9.37.126',
-            '10.9.37.127',
-            '10.9.37.128',
-            '10.9.37.129',
-            '10.9.37.130',
-            '10.9.37.131',
-            '10.9.37.132',
-            '10.9.37.133',
-            '10.9.37.134',
-            '10.9.37.135',
-            '10.9.37.136',
-            '10.9.37.137',
-            '10.9.37.138',
-            '10.9.37.139',
-            '10.9.37.140',
         ]
         return Response(host_list)
 
     def post(self, request):
+        print('11111111111')
         info = request.data
         action = info.get('action')
-
+        print('info####', info)
         hostname = info['basic']['data']['hostname']
 
         result = {
@@ -123,7 +96,7 @@ class Asset(AuthView):
             server_info = {}
 
             basic = info['basic']['data']
-            main_board = info['main_board']['data']
+            main_board = info.get('main_board').get('data')
             cpu = info['cpu']['data']
             server_info.update(basic)
             server_info.update(main_board)
@@ -131,7 +104,7 @@ class Asset(AuthView):
 
             server = models.Server.objects.create(**server_info)
             # 新增disk
-            disk_info = info['disk']['data']
+            disk_info = info.get('disk').get('data')
             disk_obj_list = []
             for disk in disk_info.values():
                 disk_obj_list.append(models.Disk(**disk, server=server))
@@ -166,14 +139,11 @@ class Asset(AuthView):
         return Response(result)
 
 
-
-
-
-
-
-KEY = 'alkdjwqm,ensklhjkrhwfeqnsdah'
+KEY = 'alkdjwqm'
 import hashlib
 import time
+
+
 class Test(APIView):
 
     def post(self, request):
@@ -183,13 +153,12 @@ class Test(APIView):
         ctime = request.GET.get('ctime')
         server_key = gen_key(ctime)
 
-        now =time.time()
+        now = time.time()
 
         if now - float(ctime) > 2:
             # 时间超时
             ret['stauts'] = False
             ret['msg'] = '来的有点晚了'
-
 
         if client_key in key_record:
             # 已经使用过验证
