@@ -54,6 +54,7 @@ def process_disk(info, server):
         add_record_lit.append(models.AssetRecord(server=server,content="新增一块硬盘，硬盘详细信息如下：{}".format('; '.join(tpl_list))))
         add_disk_lit.append(models.Disk(**disk, server=server))
 
+
     if add_disk_lit:
         models.Disk.objects.bulk_create(add_disk_lit)
         models.AssetRecord.objects.bulk_create(add_record_lit)

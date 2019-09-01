@@ -23,7 +23,9 @@ class SshHandler(SshAndSaltHandler):
         # 执行命令
         stdin, stdout, stderr = ssh.exec_command(command)
         # 获取命令结果
+        #print(stdin.read(),stderr.read(),stdout.read())
         ret = stdout.read()
+       #
         # print(ret)
         ssh.close()
 

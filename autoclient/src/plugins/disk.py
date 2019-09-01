@@ -6,6 +6,7 @@ import traceback
 from lib.response import BaseResponse
 from lib.logger import logger
 
+
 class Disk(BasePlugin):
 
     def linux(self, handler, hostname=None):
@@ -18,8 +19,10 @@ class Disk(BasePlugin):
                     ret = f.read()
 
             else:
-                ret = handler.cmd('sudo MegaCli  -PDList -aALL', hostname)
-            response.data = self.parse(ret)
+                # ret = handler.cmd('sudo MegaCli  -PDList -aALL', hostname)
+                ret = handler.cmd("lsblk | grep '^s' | grep 'disk'", hostname)
+
+            response.data = self.parse_disk(ret.decode('utf-8'))
 
         except Exception:
             error = traceback.format_exc()
@@ -32,6 +35,21 @@ class Disk(BasePlugin):
     def win(self, handler, hostname=None):
         ret = handler.cmd('wmic logicaldisk', hostname)
         return ret[:20]
+
+    def parse_disk(self, content):
+        dic = {}
+        disk_list = content.split(
+            '\n')  # {'0': {'slot': '0', 'pd_type': 'SAS', 'capacity': '279.396', 'model': 'SEAGATE ST300MM0006     LS08S0K2B5NV'}}
+        count = 0
+        #print(disk_list)
+        for disk in disk_list:
+            if disk:
+                info_lst = [i for i in disk.split(' ') if i]  # ['sda', '8:0', '0', '60G', '0', 'disk']
+                dic[count] = {'slot': count, 'pd_type': info_lst[0], 'capacity': info_lst[3].strip('G'),
+                              'model': info_lst[-1]}
+        return dic
+
+            # dic[i]={'slot': i, 'pd_type': dic[i][0], 'capacity': '279.396', 'model': 'SEAGATE ST300MM0006     LS08S0K2B5NV'}
 
     def parse(self, content):
         """
@@ -63,7 +81,7 @@ class Disk(BasePlugin):
                         temp_dict[name] = value.strip()
             if temp_dict:
                 response[temp_dict['slot']] = temp_dict
-        return response
+        return response  # {'0': {'slot': '0', 'pd_type': 'SAS', 'capacity': '279.396', 'model': 'SEAGATE ST300MM0006     LS08S0K2B5NV'}}
 
     @staticmethod
     def mega_patter_match(needle):

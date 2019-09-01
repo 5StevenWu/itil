@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 USER = 'root'
 PWD = 'XXXX'
-ENGINE = 'agent'
+ENGINE = 'ssh'
 
 ENGINE_DICT = {
     'agent': 'src.engine.agent.AgentHandler',
@@ -25,14 +25,13 @@ PLUGINS_DICT = {
 SSH_USER = 'root'
 SSH_PWD = '1'
 
-DEBUG = True
-#DEBUG = False
+DEBUG = False
 
 POST_ASSET_URL = 'http://127.0.0.1:8000/api/asset/'
 
 LOG_NAME = 'itil.log'
 LOG_FILE_PATH = os.path.join(BASE_DIR, 'log', 'log.log')
 
-CERT_PATH = os.path.join(BASE_DIR,'conf','cert')
+CERT_PATH = os.path.join(BASE_DIR, 'conf', 'cert')
 # api验证的KEY
 KEY = 'alkdjwqm'

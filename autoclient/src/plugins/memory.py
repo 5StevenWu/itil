@@ -16,9 +16,9 @@ class Memory(BasePlugin):
                 with open(os.path.join(self.base_dir, 'files', 'memory.out')) as f:
                     ret = f.read()
             else:
-                ret = handler.cmd('sudo dmidecode  -q -t 17 2>/dev/null', hostname)[:60]
+                ret = handler.cmd('sudo dmidecode  -q -t 17 2>/dev/null', hostname)
             # print(ret)
-            response.data = self.parse(ret)
+            response.data = self.parse(ret.decode('utf-8'))
             # print(response.data)
         except Exception:
             error = traceback.format_exc()
@@ -49,6 +49,7 @@ class Memory(BasePlugin):
         }
         devices = content.split('Memory Device')
         for item in devices:
+            if 'No Module Installed' in item: continue   #如果是空的内存直接跳过
             item = item.strip()
             if not item:
                 continue

@@ -38,8 +38,8 @@ class NIC(BasePlugin):
         ifaces = dict()
         ip_path = 'ip'
         if ip_path:
-            cmd1 = handler.cmd('sudo {0} link show'.format(ip_path), hostname)
-            cmd2 = handler.cmd('sudo {0} addr show'.format(ip_path), hostname)
+            cmd1 = handler.cmd('sudo {0} link show'.format(ip_path), hostname).decode('utf-8')
+            cmd2 = handler.cmd('sudo {0} addr show'.format(ip_path), hostname).decode('utf-8')
             ifaces = self._interfaces_ip(cmd1 + '\n' + cmd2)
         return ifaces
 

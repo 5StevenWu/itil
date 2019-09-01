@@ -49,7 +49,8 @@ class Server(models.Model):
                                       on_delete=models.SET_NULL)
 
     # 基本信息 + 主板信息 + CPU信息
-    hostname = models.CharField('主机名', max_length=128, unique=True)
+    hostname = models.CharField('主机唯一ID', max_length=128, unique=True)
+    #domainname = models.CharField('主机名', max_length=128)
     os_platform = models.CharField('系统', max_length=16, null=True, blank=True)
     os_version = models.CharField('系统版本', max_length=16, null=True, blank=True)
 
@@ -61,7 +62,7 @@ class Server(models.Model):
     cpu_physical_count = models.IntegerField('CPU物理个数', null=True, blank=True)
     cpu_model = models.CharField('CPU型号', max_length=128, null=True, blank=True)
 
-    latest_date = models.DateField('最后更新时间', null=True,)
+    latest_date = models.DateField('最后更新时间', null=True, )
     create_at = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:

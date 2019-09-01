@@ -19,7 +19,7 @@ class MainBoard(BasePlugin):
                 output = open(os.path.join(self.base_dir, 'files', 'board.out'), 'r').read()
             else:
                 shell_command = "sudo dmidecode -t1"
-                output = handler.cmd(shell_command, hostname)
+                output = handler.cmd(shell_command, hostname).decode('utf-8')
             response.data = self.parse(output)
         except Exception as e:
             msg = traceback.format_exc()

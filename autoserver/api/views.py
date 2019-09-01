@@ -70,18 +70,18 @@ class AuthView(APIView):
             return super().dispatch(request, *args, **kwargs)
 
 
-class Asset(AuthView):
+class Asset(APIView):
     def get(self, request):
         host_list = [
-            '10.9.37.41',
+            '10.2.41.162',
         ]
         return Response(host_list)
 
     def post(self, request):
-        print('11111111111')
+
         info = request.data
         action = info.get('action')
-        print('info####', info)
+
         hostname = info['basic']['data']['hostname']
 
         result = {
@@ -101,7 +101,7 @@ class Asset(AuthView):
             server_info.update(basic)
             server_info.update(main_board)
             server_info.update(cpu)
-
+            print('#serverinfo#===',server_info)
             server = models.Server.objects.create(**server_info)
             # 新增disk
             disk_info = info.get('disk').get('data')

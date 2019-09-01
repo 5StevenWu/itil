@@ -9,7 +9,7 @@ class Basic(BasePlugin):
         获取系统平台
         :return:
         """
-        output = handler.cmd('uname', hostname)
+        output = handler.cmd('uname', hostname).decode('utf-8')
         return output.strip()
 
     def os_version(self, handler, hostname):
@@ -17,7 +17,7 @@ class Basic(BasePlugin):
         获取系统版本
         :return:
         """
-        output = handler.cmd('cat /etc/issue', hostname)
+        output = handler.cmd('cat /etc/issue', hostname).decode('utf-8')
         result = output.strip().split('\n')[0]
         return result
 
@@ -26,8 +26,10 @@ class Basic(BasePlugin):
         获取主机名
         :return:
         """
-        output = handler.cmd('hostname', hostname)
+        output = handler.cmd('hostname', hostname).decode('utf-8')
         return output.strip()
+
+
 
     def win(self, handler, hostname=None):
         raise NotImplementedError('win must be implemented ')
