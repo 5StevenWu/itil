@@ -73,7 +73,7 @@ class AuthView(APIView):
 class Asset(APIView):
     def get(self, request):
         host_list = [
-            '10.2.41.162',
+            '192.168.143.141',
         ]
         return Response(host_list)
 

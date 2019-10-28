@@ -41,7 +41,7 @@ class SshAndSaltHandler(BaseHandler):
     def task(self, hostname):
         info = get_server_info(self, hostname)
         info['action'] = 'update'
-
+        #有init文件即不是首次执行
         init_status = self.cmd('ls /etc/itil/initfinish', hostname).decode('utf-8')
 
         if not init_status:

@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 USER = 'root'
 PWD = 'XXXX'
-ENGINE = 'ssh'
+ENGINE = 'agent'
 
 ENGINE_DICT = {
     'agent': 'src.engine.agent.AgentHandler',
@@ -25,9 +25,9 @@ PLUGINS_DICT = {
 SSH_USER = 'root'
 SSH_PWD = '1'
 
-DEBUG = False
+DEBUG = True
 
-POST_ASSET_URL = 'http://127.0.0.1:8000/api/asset/'
+POST_ASSET_URL = 'http://127.0.0.1:8001/api/asset/'
 
 LOG_NAME = 'itil.log'
 LOG_FILE_PATH = os.path.join(BASE_DIR, 'log', 'log.log')
