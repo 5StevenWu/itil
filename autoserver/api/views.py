@@ -52,7 +52,7 @@ class AuthView(APIView):
             # 时间超时
             ret['stauts'] = False
             ret['msg'] = '来的有点晚了'
-            return JsonResponse(ret)
+            return JsonResponse(ret)  #没有过dispatch 使用JsonResponse返回 
 
         if client_key in key_record:
             # 已经使用过验证
