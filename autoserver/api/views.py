@@ -70,7 +70,8 @@ class AuthView(APIView):
             return super().dispatch(request, *args, **kwargs)
 
 
-class Asset(APIView):
+
+class Asset(AuthView):
     def get(self, request):
         host_list = [
             '192.168.143.141',
