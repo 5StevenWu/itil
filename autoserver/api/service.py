@@ -32,12 +32,13 @@ def process_disk(info, server):
     update_slot_set = disk_slot__db_set & disk_slot_set  # 更新的槽位
 
     # 新增硬盘
-    add_disk_lit = []
-    add_record_lit = []
+    add_disk_list = []
+    # 变更记录
+    add_record_list = []
     for slot in add_slot_set:
         disk = disk_info.get(slot)
 
-        """
+        """ 获取到的磁盘的单条信息
         disk =  {
             'slot': '0',
             'pd_type': 'SAS',
@@ -49,40 +50,42 @@ def process_disk(info, server):
         "插槽位：0；类型：SAS "
         tpl_list = []  # ['插槽位 : 0', '磁盘类型 : SAS', '磁盘容量GB : 279.396', '磁盘型号 : SEAGATE ST300MM0006     LS08S0K2B5NV']
         for name, value in disk.items():
-            verbose_name = models.Disk._meta.get_field(name).verbose_name
+            verbose_name = models.Disk._meta.get_field(name).verbose_name        #_meta.field可以获取到models里面的单条对象 进而可以获取verbosename  参见脚本中的测试案例
             tpl_list.append("{}:{}".format(verbose_name, value))  # 插槽位 : 0    磁盘型号: SAS
-        add_record_lit.append(models.AssetRecord(server=server,content="新增一块硬盘，硬盘详细信息如下：{}".format('; '.join(tpl_list))))
-        add_disk_lit.append(models.Disk(**disk, server=server))
+        add_record_list.append(
+            models.AssetRecord(server=server, content="新增一块硬盘，硬盘详细信息如下：{}".format('; '.join(tpl_list))))
 
+        add_disk_list.append(models.Disk(**disk, server=server))
 
     if add_disk_lit:
-        models.Disk.objects.bulk_create(add_disk_lit)
-        models.AssetRecord.objects.bulk_create(add_record_lit)
+        models.Disk.objects.bulk_create(add_disk_list)
+        models.AssetRecord.objects.bulk_create(add_record_list)
 
     # 删除硬盘
     if del_slot_set:
         models.Disk.objects.filter(server=server, slot__in=del_slot_set).delete()
-        models.AssetRecord.objects.create(server=server,content='槽位{}的硬盘被移除了。'.format(','.join(del_slot_set)))
 
+        models.AssetRecord.objects.create(server=server, content='槽位{}的硬盘被移除了。'.format(','.join(del_slot_set)))
 
     # 更新硬盘
-    update_record_list = []    # 变更记录对象的列表
+    update_record_list = []  # 变更记录对象的列表
     for slot in update_slot_set:
         disk = disk_info.get(slot)  # 新提交的数据
-        disk_obj = models.Disk.objects.filter(server=server, slot=slot).first() # 老硬盘的对象
+        disk_obj = models.Disk.objects.filter(server=server, slot=slot).first()  # 老硬盘的对象
 
-        tpl_list = [] # 临时存放  ’{}由{}变更为{}‘
+        tpl_list = []  # 临时存放  ’{}由{}变更为{}‘
 
         update_dict = {}  # 更新字段的值
-        for name,value in disk.items():
-            old_value = getattr(disk_obj,name)  # 通过反射获取老的值
+        for name, value in disk.items():
+            old_value = getattr(disk_obj, name)  # 通过反射获取老的值
             if value != str(old_value):
                 update_dict[name] = value
                 verbose_name = models.Disk._meta.get_field(name).verbose_name
-                tpl_list.append("{}由{}变更为{}".format(verbose_name,old_value,value))
+                tpl_list.append("{}由{}变更为{}".format(verbose_name, old_value, value))
 
         if tpl_list:
-            update_record_list.append(models.AssetRecord(server=server,content='槽位{}上的硬盘发生变更，变更信息如下：{}'.format(slot,'; '.join(tpl_list))))
+            update_record_list.append(
+                models.AssetRecord(server=server, content='槽位{}上的硬盘发生变更，变更信息如下：{}'.format(slot, '; '.join(tpl_list))))
             models.Disk.objects.filter(server=server, slot=slot).update(**update_dict)
 
     if update_record_list:
