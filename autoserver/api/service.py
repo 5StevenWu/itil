@@ -75,8 +75,8 @@ def process_disk(info, server):
 
         tpl_list = []  # 临时存放  ’{}由{}变更为{}‘
 
-        update_dict = {}  # 更新字段的值
-        for name, value in disk.items():
+        update_dict = {}  # 更新字段的值 避免更新某个硬盘的所有字段
+        for name, value in disk.items():  #取新的值
             old_value = getattr(disk_obj, name)  # 通过反射获取老的值
             if value != str(old_value):
                 update_dict[name] = value
@@ -86,10 +86,10 @@ def process_disk(info, server):
         if tpl_list:
             update_record_list.append(
                 models.AssetRecord(server=server, content='槽位{}上的硬盘发生变更，变更信息如下：{}'.format(slot, '; '.join(tpl_list))))
-            models.Disk.objects.filter(server=server, slot=slot).update(**update_dict)
+            models.Disk.objects.filter(server=server, slot=slot).update(**update_dict)  #更新数据库
 
     if update_record_list:
-        models.AssetRecord.objects.bulk_create(update_record_list)
+        models.AssetRecord.objects.bulk_create(update_record_list) #更新记录
 
 
 def process_memory(info, server):
