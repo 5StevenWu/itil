@@ -14,19 +14,25 @@ stark组件的使用文档：
         url(r'^stark/', site.urls),
         ...
     ]
-3. 在已注册的APP下创建stark.py
+3. 在已注册的APP下创建stark.py  比如itil项目的repository目录
     autodiscover_modules('stark')   —— 》 决定的名称
+
+    '''
+    from stark.service.stark import site
+    from repository import models
+    site.register(models.BusinessUnit)
+    '''
 
 4. 业务流程：
 
 4.1 实现简单的增删改查
-    1. 导入
+    1. 在项目的stark.py文件中导入
         from stark.service.stark import site, StarkConfig
 
     2. 写配置类
         class BusinessUnitCofig(StarkConfig):
-	        list_display = ['id', 'name']
-
+	        list_display = ['id', 'name']  #要显示的内容
+            order_by=['-id']               # 排序
 	3. 注册 model 和 配置类
 
         site.register(models.BusinessUnit, BusinessUnitCofig)

@@ -15,8 +15,7 @@ class BusinessUnitConfig(StarkConfig):
     # 搜索
     search_list = ['name']
 
-    # 批量操作
-
+    # 批量操作demo
     def mutli_delete(self, request):
         print(request.POST)
         return HttpResponse('删除成功')
@@ -105,7 +104,7 @@ class ServerConfig(StarkConfig):
     # 排序
     order_by = ['-id']
     # 搜索
-    search_list = ['id','hostname', ]
+    search_list = ['id', 'hostname', ]
 
     def server_detail(self, request, pk):
         obj = models.Server.objects.filter(pk=pk).first()
@@ -116,6 +115,7 @@ class ServerConfig(StarkConfig):
         obj = models.Server.objects.filter(pk=pk).first()
         return render(request, 'server_record.html', {'obj': obj})
 
+    #额外补充整合详情页及变更记录
     def extra_url(self):
         urlpatterns = [
 
@@ -128,9 +128,9 @@ class ServerConfig(StarkConfig):
     # 组合搜索  组合筛选
     list_filter = [
         # Option('idc', is_multi=True, condition={'pk__in': [1, ]}),  # condition 只显示部分筛选条件
-        Option('idc', is_multi=True,   ),
+        Option('idc', is_multi=True, ),
         # Option('business_unit'),
-        Option('device_status_id', is_choice=True, text_func=lambda x: x[1])
+        Option('device_status_id', is_choice=True, text_func=lambda x: x[1])  #choice字段额外加is_choice  无text_func则结果为元组(1,'xx')
     ]
 
 
