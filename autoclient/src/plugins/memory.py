@@ -16,9 +16,9 @@ class Memory(BasePlugin):
                 with open(os.path.join(self.base_dir, 'files', 'memory.out')) as f:
                     ret = f.read()
             else:
-                ret = handler.cmd('sudo dmidecode  -q -t 17 2>/dev/null', hostname)
+                ret = handler.cmd('sudo dmidecode  -q -t 17 2>/dev/null', hostname).decode('utf-8')
             # print(ret)
-            response.data = self.parse(ret.decode('utf-8'))
+            response.data = self.parse(ret)
             # print(response.data)
         except Exception:
             error = traceback.format_exc()

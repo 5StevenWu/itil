@@ -8,5 +8,5 @@ EMAIL = 'qqqq'
 
 SSH_PORT = 22
 
-LOG_NAME = 'cmdb'
+LOG_NAME = 'Itil'
 LOG_FILE_PATH = os.path.join(BASE_DIR, 'log', 'log.log')

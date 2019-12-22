@@ -20,9 +20,9 @@ class Disk(BasePlugin):
 
             else:
                 # ret = handler.cmd('sudo MegaCli  -PDList -aALL', hostname)
-                ret = handler.cmd("lsblk | grep '^s' | grep 'disk'", hostname)
+                ret = handler.cmd("lsblk | grep '^s' | grep 'disk'", hostname).decode('utf-8')
 
-            response.data = self.parse_disk(ret.decode('utf-8'))
+            response.data = self.parse_disk(ret)
 
         except Exception:
             error = traceback.format_exc()
