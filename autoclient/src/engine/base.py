@@ -42,13 +42,13 @@ class SshAndSaltHandler(BaseHandler):
         info = get_server_info(self, hostname)
         info['action'] = 'update'
         #有init文件即不是首次执行
-        init_status = self.cmd('ls /etc/itil/initfinish', hostname).decode('utf-8')
+        init_status = self.cmd('cat /etc/itil/initfinish', hostname).decode('utf-8')
 
         if not init_status:
             info['action'] = 'create'
 
         ctime = time.time()
-        print(info)
+        print('收集到的信息\n',info)
         ret = requests.post(
             url=self.asset_url,
             params={'key': gen_key(ctime), 'ctime': ctime},
@@ -56,7 +56,7 @@ class SshAndSaltHandler(BaseHandler):
 
             headers={'content-type': 'application/json'}
         )
-        # print(ret.json())
+        print(ret.text)
         ret = ret.json()
         if not init_status and ret.get('status'):
             self.cmd("mkdir /etc/itil ; touch /etc/itil/initfinish", hostname)

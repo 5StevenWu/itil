@@ -26,7 +26,7 @@ SSH_USER = 'root'
 SSH_PWD = '1qaz@WSX'
 SSH_PORT = '41022'
 
-DEBUG = True
+DEBUG = False
 
 POST_ASSET_URL = 'http://127.0.0.1:8001/api/asset/'
 

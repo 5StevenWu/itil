@@ -57,7 +57,7 @@ class AuthView(APIView):
         if client_key in key_record:
             # 已经使用过验证
             ret['stauts'] = False
-            ret['msg'] = '可以已经被使用了'
+            ret['msg'] = 'key已经被使用了'
             return JsonResponse(ret)
 
         if client_key != server_key:
