@@ -57,7 +57,7 @@ def process_disk(info, server):
 
         add_disk_list.append(models.Disk(**disk, server=server))
 
-    if add_disk_lit:
+    if add_disk_list:
         models.Disk.objects.bulk_create(add_disk_list)
         models.AssetRecord.objects.bulk_create(add_record_list)
 

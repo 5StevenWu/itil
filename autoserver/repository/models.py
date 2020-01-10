@@ -6,7 +6,8 @@ class BusinessUnit(models.Model):
     业务线
     """
     name = models.CharField('业务线', max_length=64, unique=True)
-
+    comment = models.CharField('备注', max_length=128, unique=False, blank=True, null=True)
+    user=models.CharField('使用人',max_length=128,unique=False,blank=True,null=True)
     class Meta:
         verbose_name_plural = "业务线表"
 
@@ -43,14 +44,14 @@ class Server(models.Model):
 
     idc = models.ForeignKey('IDC', verbose_name='IDC机房', null=True, blank=True, on_delete=models.CASCADE)
     cabinet_num = models.CharField('机柜号', max_length=30, null=True, blank=True)
-    cabinet_order = models.CharField('机柜中序号', max_length=30, null=True, blank=True)
+    cabinet_order = models.CharField('U位', max_length=30, null=True, blank=True)
 
     business_unit = models.ForeignKey('BusinessUnit', verbose_name='属于的业务线', null=True, blank=True,
                                       on_delete=models.SET_NULL)
 
     # 基本信息 + 主板信息 + CPU信息
     hostname = models.CharField('主机唯一ID', max_length=128, unique=True)
-    #domainname = models.CharField('主机名', max_length=128)
+    # domainname = models.CharField('主机名', max_length=128)
     os_platform = models.CharField('系统', max_length=16, null=True, blank=True)
     os_version = models.CharField('系统版本', max_length=16, null=True, blank=True)
 

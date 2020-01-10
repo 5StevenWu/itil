@@ -8,7 +8,7 @@ class SshHandler(SshAndSaltHandler):
     def cmd(self, command, hostname=None):
         import paramiko
 
-        private_key = paramiko.RSAKey.from_private_key_file(r'D:\globalconf\keyssh\root')
+        private_key = paramiko.RSAKey.from_private_key_file(r'E:\globalconf\keyssh\newrootggzc\id_rsa')
 
         # 创建SSH对象
         ssh = paramiko.SSHClient()

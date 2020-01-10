@@ -36,14 +36,14 @@ class AuthView(APIView):
     def dispatch(self, request, *args, **kwargs):
 
         if request.method != 'POST':
-            print('AAA')
+            # print('AAA')
             return super().dispatch(request, *args, **kwargs)
 
         ret = {'status': True, 'msg': 'ok'}
 
         client_key = request.GET.get('key')
+        
         now = time.time()
-
         ctime = request.GET.get('ctime', now)
 
         server_key = gen_key(ctime, )
@@ -74,7 +74,8 @@ class AuthView(APIView):
 class Asset(AuthView):
     def get(self, request):
         host_list = [
-            '192.168.143.141',
+            '172.21.120.173',
+            '172.21.120.174',
         ]
         return Response(host_list)
 
@@ -84,7 +85,7 @@ class Asset(AuthView):
         action = info.get('action')
 
         hostname = info['basic']['data']['hostname']
-
+        print("提交的所有信息",info)
         result = {
             'status': True,
             'hostname': hostname

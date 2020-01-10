@@ -17,12 +17,13 @@ class Disk(BasePlugin):
                 # 读取文件
                 with open(os.path.join(self.base_dir, 'files', 'disk.out')) as f:
                     ret = f.read()
+                response.data=self.parse(ret)
 
             else:
                 # ret = handler.cmd('sudo MegaCli  -PDList -aALL', hostname)
                 ret = handler.cmd("lsblk | grep '^s' | grep 'disk'", hostname).decode('utf-8')
 
-            response.data = self.parse_disk(ret)
+                response.data = self.parse_disk(ret)
 
         except Exception:
             error = traceback.format_exc()

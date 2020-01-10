@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 USER = 'root'
 PWD = 'XXXX'
-ENGINE = 'agent'
+ENGINE = 'ssh'
 
 ENGINE_DICT = {
     'agent': 'src.engine.agent.AgentHandler',
@@ -23,7 +23,8 @@ PLUGINS_DICT = {
 }
 
 SSH_USER = 'root'
-SSH_PWD = '1'
+SSH_PWD = '1qaz@WSX'
+SSH_PORT = '41022'
 
 DEBUG = True
 
