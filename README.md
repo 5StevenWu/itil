@@ -14,5 +14,6 @@ python ./manage.py migrate
 
 
 cli:
+powershell支持
 
 MegaCli安装教程参考:<https://blog.csdn.net/xinqidian_xiao/article/details/80940306>
