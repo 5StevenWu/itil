@@ -8,4 +8,5 @@ class AnsibleHandler(BaseHandler):
         收集硬件的信息 汇报给API
         :return:
         """
-        print('ansible')
+        ...
+        #print('ansible')
