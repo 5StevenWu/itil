@@ -4,6 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 USER = 'root'
 PWD = 'XXXX'
+#ENGINE示例 agent   ssh   salt 
 ENGINE = 'ssh'
 
 ENGINE_DICT = {
