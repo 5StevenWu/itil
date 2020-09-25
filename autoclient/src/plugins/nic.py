@@ -17,7 +17,9 @@ class NIC(BasePlugin):
                     ret = self._interfaces_ip(f.read())
             else:
                 ret = self.linux_interfaces(handler, hostname)
+            print('NIC网卡内容:',ret)
             self.standard(ret)
+            print('网卡处理:',ret)
             response.data = ret
 
         except Exception:

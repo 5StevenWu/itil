@@ -17,9 +17,10 @@ class SshHandler(SshAndSaltHandler):
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
         # 连接服务器
-        # ssh.connect(hostname=hostname, port=settings.SSH_PORT, username=settings.SSH_USER, password=settings.SSH_PWD)
-        ssh.connect(hostname=hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
-
+        print('开始连接服务器')
+        ssh.connect(hostname=hostname, port=settings.SSH_PORT, username=settings.SSH_USER, password=settings.SSH_PWD)
+        # ssh.connect(hostname=hostname, port=settings.SSH_PORT, username=settings.SSH_USER, pkey=private_key)
+        print('收集完毕')
         # 执行命令
         stdin, stdout, stderr = ssh.exec_command(command)
         # 获取命令结果

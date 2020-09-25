@@ -74,14 +74,15 @@ class AuthView(APIView):
 class Asset(AuthView):
     def get(self, request):
         host_list = [
-            '172.21.120.173',
-            '172.21.120.174',
+            '172.21.120.245',
+            '172.21.120.249',
         ]
         return Response(host_list)
 
     def post(self, request):
 
         info = request.data
+        print (request)
         action = info.get('action')
 
         hostname = info['basic']['data']['hostname']
